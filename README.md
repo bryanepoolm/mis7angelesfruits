@@ -17,7 +17,7 @@ El formulario usa FormSubmit y envía a `bryanedilberto@hotmail.com`. FormSubmit
 
 ## Imágenes
 
-El logo SVG es una reinterpretación vectorial del archivo original suministrado. Las fotografías son reales, tomadas de Pexels bajo su licencia gratuita; representan productos y trabajo de campo de forma ilustrativa, no instalaciones ni personal de la empresa.
+El logo SVG de navegación es una reinterpretación vectorial del archivo original suministrado. La restauración del logo original está en `assets/images/logo-original-hd.png` (1452 × 1083 px); la página usa una copia WebP optimizada. Se produjo con la herramienta integrada de edición de imágenes a partir del JPEG original con este encargo: *«Restaurar y ampliar el logo exacto; conservar sol amarillo, piña de pino, frutos, aguacates, óvalo gris, fondo blanco y textos “MIS 7 ANGELES” y “Berries & Avocados”; mejorar nitidez y reducir artefactos sin rediseñarlo»*. Las fotografías son reales, tomadas de Pexels bajo su licencia gratuita; representan productos y trabajo de campo de forma ilustrativa, no instalaciones ni personal de la empresa.
 
 - Frutos rojos: https://www.pexels.com/photo/close-up-shot-of-berries-6978242/
 - Aguacates: https://www.pexels.com/photo/fresh-cut-avocado-on-table-in-kitchen-4352091/
