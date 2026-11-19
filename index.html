@@ -129,6 +129,38 @@
         </div>
       </section>
 
+      <section class="gallery section" id="galeria" aria-labelledby="gallery-title">
+        <div class="container">
+          <div class="gallery-heading" data-reveal>
+            <div>
+              <p class="eyebrow"><span class="eyebrow-line"></span> Nuestra operación</p>
+              <h2 id="gallery-title">Del fruto <em>al envío.</em></h2>
+            </div>
+            <div class="gallery-controls" aria-label="Controles de la galería">
+              <button type="button" data-gallery-scroll="prev" aria-label="Ver fotografías anteriores">Anterior</button>
+              <button type="button" data-gallery-scroll="next" aria-label="Ver fotografías siguientes">Siguiente</button>
+            </div>
+          </div>
+          <div class="gallery-track" tabindex="0" aria-label="Fotografías de fruta, empaque y transporte" data-reveal>
+            <button class="gallery-photo" type="button" aria-label="Ampliar fotografía del equipo preparando fruta"><img src="assets/images/gallery/01.webp" alt="Equipo preparando fruta en el área de empaque" loading="lazy" decoding="async" width="1200" height="1600" /></button>
+            <button class="gallery-photo" type="button" aria-label="Ampliar fotografía de arándanos"><img src="assets/images/gallery/02.webp" alt="Arándanos en un contenedor" loading="lazy" decoding="async" width="1200" height="1600" /></button>
+            <button class="gallery-photo" type="button" aria-label="Ampliar fotografía de frambuesas"><img src="assets/images/gallery/03.webp" alt="Frambuesas en un contenedor azul" loading="lazy" decoding="async" width="900" height="1600" /></button>
+            <button class="gallery-photo" type="button" aria-label="Ampliar fotografía de fresas"><img src="assets/images/gallery/04.webp" alt="Fresas en un contenedor azul" loading="lazy" decoding="async" width="960" height="1280" /></button>
+            <button class="gallery-photo" type="button" aria-label="Ampliar fotografía de zarzamoras"><img src="assets/images/gallery/05.webp" alt="Zarzamoras junto a cajas preparadas para traslado" loading="lazy" decoding="async" width="960" height="1280" /></button>
+            <button class="gallery-photo" type="button" aria-label="Ampliar fotografía de zarzamoras congeladas"><img src="assets/images/gallery/06.webp" alt="Detalle de zarzamoras congeladas" loading="lazy" decoding="async" width="1200" height="1600" /></button>
+            <button class="gallery-photo" type="button" aria-label="Ampliar fotografía de frutos rojos"><img src="assets/images/gallery/07.webp" alt="Frutos rojos en un contenedor azul" loading="lazy" decoding="async" width="1200" height="1600" /></button>
+            <button class="gallery-photo" type="button" aria-label="Ampliar fotografía de fruta empacada"><img src="assets/images/gallery/08.webp" alt="Bolsas de frutos rojos empacadas en una caja" loading="lazy" decoding="async" width="899" height="1600" /></button>
+            <button class="gallery-photo" type="button" aria-label="Ampliar fotografía de fruta en cubos"><img src="assets/images/gallery/09.webp" alt="Fruta en cubos dentro de un contenedor" loading="lazy" decoding="async" width="900" height="1600" /></button>
+            <button class="gallery-photo" type="button" aria-label="Ampliar fotografía de empaque de fruta"><img src="assets/images/gallery/10.webp" alt="Bolsas abiertas con fruta en cubos" loading="lazy" decoding="async" width="1200" height="1600" /></button>
+            <button class="gallery-photo" type="button" aria-label="Ampliar fotografía de fruta en bolsas"><img src="assets/images/gallery/11.webp" alt="Bolsas de fruta en cubos dentro de una caja" loading="lazy" decoding="async" width="1018" height="1356" /></button>
+            <button class="gallery-photo" type="button" aria-label="Ampliar fotografía de pesaje de fruta"><img src="assets/images/gallery/12.webp" alt="Bolsa de fruta en cubos sobre una báscula" loading="lazy" decoding="async" width="1201" height="1600" /></button>
+            <button class="gallery-photo" type="button" aria-label="Ampliar fotografía de fruta en rodajas"><img src="assets/images/gallery/13.webp" alt="Rodajas de fruta congelada" loading="lazy" decoding="async" width="446" height="597" /></button>
+            <button class="gallery-photo" type="button" aria-label="Ampliar fotografía de producto empacado"><img src="assets/images/gallery/14.webp" alt="Producto empacado en bloques dentro de una caja" loading="lazy" decoding="async" width="720" height="1081" /></button>
+            <button class="gallery-photo gallery-photo-wide" type="button" aria-label="Ampliar fotografía de carga para transporte"><img src="assets/images/gallery/15.webp" alt="Carga paletizada dentro de un vehículo de transporte" loading="lazy" decoding="async" width="1600" height="900" /></button>
+          </div>
+        </div>
+      </section>
+
       <section class="contact section" id="contacto" aria-labelledby="contact-title">
         <div class="container contact-grid">
           <div class="contact-copy" data-reveal>
@@ -166,5 +198,14 @@
       </div>
       <div class="container footer-bottom"><span>© <span id="year">2026</span> Mis 7 Ángeles Berries &amp; Avocados</span><span>Zamora, Michoacán</span></div>
     </footer>
+
+    <dialog class="gallery-dialog" aria-label="Fotografía ampliada">
+      <div class="gallery-dialog-top"><button type="button" class="gallery-close">Cerrar</button></div>
+      <img class="gallery-dialog-image" alt="" />
+      <div class="gallery-dialog-bottom">
+        <button type="button" class="gallery-dialog-prev">Anterior</button>
+        <button type="button" class="gallery-dialog-next">Siguiente</button>
+      </div>
+    </dialog>
   </body>
 </html>

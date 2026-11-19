@@ -24,4 +24,6 @@ El logo SVG de navegación es una reinterpretación vectorial del archivo origin
 - Cultivo de fresas: https://www.pexels.com/photo/strawberry-plantation-under-blue-sky-7457179/
 - Otros cultivos: https://www.pexels.com/photo/assorted-fruits-and-vegetables-on-a-wooden-table-6653587/
 
+La galería usa las 15 fotografías proporcionadas por la empresa. Las copias WebP optimizadas están en `assets/images/gallery/`; los archivos originales permanecen en su carpeta de origen.
+
 Contenido empresarial basado en la presentación entregada. El sitio evita atribuir certificaciones específicas a la empresa, ya que las diapositivas incluyen certificados de productores terceros.
