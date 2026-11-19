@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 150" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Mis 7 Ángeles Berries &amp; Avocados</title>
+  <desc id="desc">Versión vectorial del emblema de sol y frutas con el nombre de la empresa.</desc>
+  <circle cx="74" cy="75" r="70" fill="#F9F2DE"/>
+  <path d="M74 14v16M45 21l7 14M22 45l14 7M14 75h16M103 21l-7 14M126 45l-14 7M134 75h-16" stroke="#DDAF4F" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="74" cy="72" r="37" fill="#F2D37C"/>
+  <path d="M17 95c20-15 40-15 57-6 19-13 38-12 57 4" stroke="#6E8A51" stroke-width="7" stroke-linecap="round"/>
+  <path d="M85 89c5-14 20-22 29-12 9 11 1 34-13 42-13 7-24-4-16-30Z" fill="#6F8C50" stroke="#335C43" stroke-width="2.5"/>
+  <path d="M92 92c4-10 13-15 19-8 6 7-1 23-11 29-8 4-14-4-8-21Z" fill="#D9DFA2"/>
+  <circle cx="101" cy="99" r="7" fill="#A66B3C"/>
+  <path d="M46 77c4 5 9 5 13 0M56 74c4 5 9 5 13 0" stroke="#497149" stroke-width="4" stroke-linecap="round"/>
+  <path d="M55 82c-14 0-22 9-21 23 1 14 11 25 24 25 11 0 21-12 21-25 0-15-10-23-24-23Z" fill="#B84452" stroke="#7C2E3C" stroke-width="2.5"/>
+  <g fill="#F7D7B3"><circle cx="46" cy="96" r="1.8"/><circle cx="60" cy="92" r="1.8"/><circle cx="68" cy="101" r="1.8"/><circle cx="43" cy="110" r="1.8"/><circle cx="56" cy="110" r="1.8"/><circle cx="68" cy="116" r="1.8"/><circle cx="55" cy="121" r="1.8"/></g>
+  <path d="M19 135c23 8 77 12 110-12" stroke="#365A43" stroke-width="4" stroke-linecap="round"/>
+  <text x="164" y="65" fill="#284737" font-family="Georgia, 'Times New Roman', serif" font-size="45" font-weight="700" letter-spacing="-1">Mis 7 Ángeles</text>
+  <path d="M166 78h335" stroke="#D9B66B" stroke-width="2"/>
+  <text x="165" y="111" fill="#8E3A49" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="4">BERRIES &amp; AVOCADOS</text>
+</svg>

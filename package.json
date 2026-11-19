@@ -1,0 +1,10 @@
+{
+  "name": "mis-7-angeles-landing",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "npx serve dist -l 4173"
+  }
+}
