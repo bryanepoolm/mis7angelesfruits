@@ -13,7 +13,7 @@ Abre `http://localhost:4173`.
 
 ## Formulario
 
-En Plesk, `contact.php` envía las consultas desde `bryanp.financialgroup@gmail.com` a `bryanedilberto@hotmail.com` mediante `smtp.gmail.com`, STARTTLS y el puerto 587. La contraseña de aplicación de Gmail se guarda en `httpdocs/contact.smtp.php`, fuera de la raíz pública `httpdocs/dist` y excluida de Git. Copia `contact.smtp.example.php` a ese archivo y sustituye el valor de `password`. La cuenta de Gmail debe tener activada la verificación en dos pasos para poder crear una contraseña de aplicación. Si falta la configuración o Gmail rechaza el mensaje, el formulario muestra un error; nunca confirma un envío que solo quedó en la cola local. Para cambiar el destinatario, sustituye la dirección en `contact.php`. El administrador Git de Plesk despliega la rama `main` del repositorio.
+En Plesk, `contact.php` envía las consultas desde `bryanp.financialgroup@gmail.com` a `bryanedilberto@hotmail.com` mediante `smtp.gmail.com`, STARTTLS y el puerto 587. La contraseña de aplicación de Gmail se guarda como único contenido de `httpdocs/contact.smtp.txt`, fuera de la raíz pública `httpdocs/dist` y excluida de Git. Se puede pegar con o sin los espacios que muestra Google. La cuenta de Gmail debe tener activada la verificación en dos pasos para poder crear una contraseña de aplicación. Si falta la configuración o Gmail rechaza el mensaje, el formulario muestra un error; nunca confirma un envío que solo quedó en la cola local. Para cambiar el destinatario, sustituye la dirección en `contact.php`. El administrador Git de Plesk despliega la rama `main` del repositorio.
 
 ## Imágenes
 

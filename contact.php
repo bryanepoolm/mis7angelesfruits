@@ -63,16 +63,16 @@ $body = "Nueva consulta desde mis7angelesfruits.mx\n\n"
     . "Interés: {$interest}\n\n"
     . "Mensaje:\n{$message}\n";
 
-$configFile = dirname(__DIR__) . '/contact.smtp.php';
+$configFile = dirname(__DIR__) . '/contact.smtp.txt';
 $autoloadFile = dirname(__DIR__) . '/vendor/autoload.php';
-if (!is_file($configFile) || !is_file($autoloadFile)) {
+if (!is_readable($configFile) || !is_file($autoloadFile)) {
     error_log('El formulario de mis7angelesfruits.mx no tiene SMTP configurado.');
     respond(503, false, 'El formulario no está disponible por el momento. Escríbenos por correo.');
 }
 
-$smtp = require $configFile;
-if (!is_array($smtp)
-    || !is_string($smtp['password'] ?? null) || trim($smtp['password']) === '') {
+$passwordFile = file_get_contents($configFile);
+$appPassword = is_string($passwordFile) ? preg_replace('/\s+/', '', $passwordFile) : null;
+if (!is_string($appPassword) || !preg_match('/^[a-z0-9]{16}$/i', $appPassword)) {
     error_log('La configuración SMTP de mis7angelesfruits.mx está incompleta.');
     respond(503, false, 'El formulario no está disponible por el momento. Escríbenos por correo.');
 }
@@ -87,7 +87,7 @@ try {
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->SMTPAuth = true;
     $mail->Username = 'bryanp.financialgroup@gmail.com';
-    $mail->Password = str_replace(' ', '', $smtp['password']);
+    $mail->Password = $appPassword;
     $mail->Timeout = 15;
     $mail->CharSet = PHPMailer::CHARSET_UTF8;
     $mail->setFrom('bryanp.financialgroup@gmail.com', 'Mis 7 Ángeles');
