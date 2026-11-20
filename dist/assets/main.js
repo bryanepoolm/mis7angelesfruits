@@ -76,3 +76,38 @@ galleryDialog.addEventListener('keydown', (event) => {
   if (event.key === 'ArrowLeft') showGalleryPhoto(activePhoto - 1);
   if (event.key === 'ArrowRight') showGalleryPhoto(activePhoto + 1);
 });
+
+const contactForm = document.querySelector('.contact-form');
+const contactSubmit = contactForm.querySelector('button[type="submit"]');
+const contactFeedback = contactForm.querySelector('.form-feedback');
+
+contactForm.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  if (!contactForm.reportValidity()) return;
+
+  contactSubmit.disabled = true;
+  contactSubmit.textContent = 'Enviando…';
+  contactFeedback.hidden = true;
+
+  try {
+    const response = await fetch(contactForm.action, {
+      method: 'POST',
+      body: new FormData(contactForm),
+      headers: { Accept: 'application/json' },
+    });
+    const result = await response.json();
+    if (!response.ok || !result.ok) throw new Error(result.message || 'No se pudo enviar el mensaje.');
+
+    contactFeedback.className = 'form-feedback is-success';
+    contactFeedback.textContent = result.message;
+    contactFeedback.hidden = false;
+    contactForm.reset();
+  } catch (error) {
+    contactFeedback.className = 'form-feedback is-error';
+    contactFeedback.textContent = error.message || 'No se pudo enviar el mensaje. Inténtalo de nuevo.';
+    contactFeedback.hidden = false;
+  } finally {
+    contactSubmit.disabled = false;
+    contactSubmit.textContent = 'Enviar mensaje';
+  }
+});

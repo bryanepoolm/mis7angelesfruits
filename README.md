@@ -13,7 +13,7 @@ Abre `http://localhost:4173`.
 
 ## Formulario
 
-El formulario usa FormSubmit y envía a `bryanedilberto@hotmail.com`. FormSubmit exige que el dueño del correo confirme el primer mensaje de activación antes de entregar consultas. Para cambiar el destinatario, sustituye el correo en el atributo `action` del formulario en `index.html` y activa la nueva dirección. No hay credenciales en el código.
+En Plesk, el formulario envía las consultas mediante `contact.php` a `bryanedilberto@hotmail.com`. El servidor debe tener PHP y correo saliente habilitados. Para cambiar el destinatario, sustituye la dirección en `contact.php`. La raíz pública del dominio es `httpdocs/dist`; el administrador Git de Plesk despliega allí la rama `main` del repositorio.
 
 ## Imágenes
 

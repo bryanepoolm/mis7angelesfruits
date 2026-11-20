@@ -169,10 +169,7 @@
             <p>Si buscas fruta para tu negocio o quieres trabajar con nosotros, escríbenos.</p>
             <div class="contact-details"><span>Zamora, Michoacán, México</span><a href="mailto:bryanedilberto@hotmail.com">bryanedilberto@hotmail.com</a></div>
           </div>
-          <form class="contact-form" action="https://formsubmit.co/bryanedilberto@hotmail.com" method="POST" data-reveal>
-            <input type="hidden" name="_subject" value="Nueva consulta desde Mis 7 Ángeles" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="false" />
+          <form class="contact-form" action="/contact.php" method="POST" data-reveal>
             <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="honey" aria-hidden="true" />
             <h3>Escríbenos</h3>
             <p class="form-intro">Déjanos tus datos y te responderemos pronto.</p>
@@ -186,6 +183,7 @@
             </div>
             <div class="form-field"><label for="mensaje">Mensaje <span aria-hidden="true">*</span></label><textarea id="mensaje" name="Mensaje" rows="5" required maxlength="3000" placeholder="Cuéntanos un poco sobre lo que necesitas"></textarea></div>
             <button class="button button-dark" type="submit">Enviar mensaje</button>
+            <p class="form-feedback" role="status" aria-live="polite" hidden></p>
           </form>
         </div>
       </section>
