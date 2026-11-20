@@ -1,6 +1,9 @@
 <?php
 declare(strict_types=1);
 
+use PHPMailer\PHPMailer\Exception as MailException;
+use PHPMailer\PHPMailer\PHPMailer;
+
 function respond(int $status, bool $ok, string $message): never
 {
     http_response_code($status);
@@ -60,18 +63,41 @@ $body = "Nueva consulta desde mis7angelesfruits.mx\n\n"
     . "Interés: {$interest}\n\n"
     . "Mensaje:\n{$message}\n";
 
-$headers = [
-    'From' => 'Mis 7 Angeles <no-reply@mis7angelesfruits.mx>',
-    'Reply-To' => $email,
-    'MIME-Version' => '1.0',
-    'Content-Type' => 'text/plain; charset=UTF-8',
-];
+$configFile = dirname(__DIR__) . '/contact.smtp.php';
+$autoloadFile = dirname(__DIR__) . '/vendor/autoload.php';
+if (!is_file($configFile) || !is_file($autoloadFile)) {
+    error_log('El formulario de mis7angelesfruits.mx no tiene SMTP configurado.');
+    respond(503, false, 'El formulario no está disponible por el momento. Escríbenos por correo.');
+}
 
-$subject = '=?UTF-8?B?' . base64_encode('Nueva consulta desde Mis 7 Ángeles') . '?=';
-$sent = mail('bryanedilberto@hotmail.com', $subject, $body, $headers, '-fno-reply@mis7angelesfruits.mx');
+$smtp = require $configFile;
+if (!is_array($smtp)
+    || !is_string($smtp['password'] ?? null) || trim($smtp['password']) === '') {
+    error_log('La configuración SMTP de mis7angelesfruits.mx está incompleta.');
+    respond(503, false, 'El formulario no está disponible por el momento. Escríbenos por correo.');
+}
 
-if (!$sent) {
-    error_log('No se pudo enviar una consulta desde mis7angelesfruits.mx');
+require $autoloadFile;
+
+try {
+    $mail = new PHPMailer(true);
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->Port = 587;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->SMTPAuth = true;
+    $mail->Username = 'bryanp.financialgroup@gmail.com';
+    $mail->Password = str_replace(' ', '', $smtp['password']);
+    $mail->Timeout = 15;
+    $mail->CharSet = PHPMailer::CHARSET_UTF8;
+    $mail->setFrom('bryanp.financialgroup@gmail.com', 'Mis 7 Ángeles');
+    $mail->addAddress('bryanedilberto@hotmail.com');
+    $mail->addReplyTo($email, $name);
+    $mail->Subject = 'Nueva consulta desde Mis 7 Ángeles';
+    $mail->Body = $body;
+    $mail->send();
+} catch (MailException $error) {
+    error_log('Falló el envío SMTP de mis7angelesfruits.mx: ' . $error->getMessage());
     respond(502, false, 'No se pudo enviar el mensaje. Escríbenos por correo e inténtalo de nuevo más tarde.');
 }
 
