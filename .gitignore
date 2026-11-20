@@ -3,3 +3,4 @@ public/
 node_modules/
 contact.smtp.php
 contact.smtp.txt
+tmp/
