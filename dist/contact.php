@@ -67,14 +67,14 @@ $configFile = dirname(__DIR__) . '/contact.smtp.txt';
 $autoloadFile = dirname(__DIR__) . '/vendor/autoload.php';
 if (!is_readable($configFile) || !is_file($autoloadFile)) {
     error_log('El formulario de mis7angelesfruits.mx no tiene SMTP configurado.');
-    respond(503, false, 'El formulario no está disponible por el momento. Escríbenos por correo.');
+    respond(503, false, 'El formulario no está disponible por el momento. Inténtalo de nuevo más tarde.');
 }
 
 $passwordFile = file_get_contents($configFile);
 $appPassword = is_string($passwordFile) ? preg_replace('/\s+/', '', $passwordFile) : null;
 if (!is_string($appPassword) || !preg_match('/^[a-z0-9]{16}$/i', $appPassword)) {
     error_log('La configuración SMTP de mis7angelesfruits.mx está incompleta.');
-    respond(503, false, 'El formulario no está disponible por el momento. Escríbenos por correo.');
+    respond(503, false, 'El formulario no está disponible por el momento. Inténtalo de nuevo más tarde.');
 }
 
 require $autoloadFile;
@@ -98,7 +98,7 @@ try {
     $mail->send();
 } catch (MailException $error) {
     error_log('Falló el envío SMTP de mis7angelesfruits.mx: ' . $error->getMessage());
-    respond(502, false, 'No se pudo enviar el mensaje. Escríbenos por correo e inténtalo de nuevo más tarde.');
+    respond(502, false, 'No se pudo enviar el mensaje. Inténtalo de nuevo más tarde.');
 }
 
 respond(200, true, 'Mensaje enviado. Te responderemos pronto.');
