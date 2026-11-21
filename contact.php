@@ -94,7 +94,7 @@ try {
     $mail->Timeout = 15;
     $mail->CharSet = PHPMailer::CHARSET_UTF8;
     $mail->setFrom('bryanp.financialgroup@gmail.com', 'Mis 7 Ángeles');
-    $mail->addAddress('bryanedilberto@hotmail.com');
+    $mail->addAddress('oscaradriangutierrezsantos@gmail.com');
     $mail->addReplyTo($email, $name);
     $mail->Subject = 'Nueva consulta desde Mis 7 Ángeles';
     $mail->Body = $body;
