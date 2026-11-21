@@ -46,12 +46,14 @@ $name = trim((string) ($_POST['Nombre'] ?? ''));
 $email = trim((string) ($_POST['email'] ?? ''));
 $company = trim((string) ($_POST['Empresa'] ?? ''));
 $interest = trim((string) ($_POST['Interés'] ?? 'Consulta general'));
+$presentation = trim((string) ($_POST['Presentación'] ?? 'Sin especificar'));
 $message = trim((string) ($_POST['Mensaje'] ?? ''));
 
 if ($name === '' || strlen($name) > 240 || preg_match('/[\r\n]/', $name)
     || !filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($email) > 160
     || strlen($company) > 240 || preg_match('/[\r\n]/', $company)
     || strlen($interest) > 120 || preg_match('/[\r\n]/', $interest)
+    || strlen($presentation) > 120 || preg_match('/[\r\n]/', $presentation)
     || $message === '' || strlen($message) > 12000) {
     respond(422, false, 'Revisa los datos y vuelve a intentarlo.');
 }
@@ -60,7 +62,8 @@ $body = "Nueva consulta desde mis7angelesfruits.mx\n\n"
     . "Nombre: {$name}\n"
     . "Correo: {$email}\n"
     . "Empresa: " . ($company !== '' ? $company : 'No indicada') . "\n"
-    . "Interés: {$interest}\n\n"
+    . "Interés: {$interest}\n"
+    . "Presentación: {$presentation}\n\n"
     . "Mensaje:\n{$message}\n";
 
 $configFile = dirname(__DIR__) . '/contact.smtp.txt';
