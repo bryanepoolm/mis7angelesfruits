@@ -89,11 +89,11 @@ try {
     $mail->Port = 587;
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->SMTPAuth = true;
-    $mail->Username = 'bryanp.financialgroup@gmail.com';
+    $mail->Username = 'oscaradriangutierrezsantos@gmail.com';
     $mail->Password = $appPassword;
     $mail->Timeout = 15;
     $mail->CharSet = PHPMailer::CHARSET_UTF8;
-    $mail->setFrom('bryanp.financialgroup@gmail.com', 'Mis 7 Ángeles');
+    $mail->setFrom('oscaradriangutierrezsantos@gmail.com', 'Mis 7 Ángeles');
     $mail->addAddress('oscaradriangutierrezsantos@gmail.com');
     $mail->addReplyTo($email, $name);
     $mail->Subject = 'Nueva consulta desde Mis 7 Ángeles';
