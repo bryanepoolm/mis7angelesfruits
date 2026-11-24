@@ -58,7 +58,7 @@ if ($name === '' || strlen($name) > 240 || preg_match('/[\r\n]/', $name)
     respond(422, false, 'Revisa los datos y vuelve a intentarlo.');
 }
 
-$body = "Nueva consulta desde mis7angelesfruits.mx\n\n"
+$body = "Mensaje recibido desde el formulario de mis7angelesfruits.mx\n\n"
     . "Nombre: {$name}\n"
     . "Correo: {$email}\n"
     . "Empresa: " . ($company !== '' ? $company : 'No indicada') . "\n"
@@ -96,7 +96,7 @@ try {
     $mail->setFrom('oscaradriangutierrezsantos@gmail.com', 'Mis 7 Ángeles');
     $mail->addAddress('oscaradriangutierrezsantos@gmail.com');
     $mail->addReplyTo($email, $name);
-    $mail->Subject = 'Nueva consulta desde Mis 7 Ángeles';
+    $mail->Subject = 'Contacto web: ' . $name;
     $mail->Body = $body;
     $mail->send();
 } catch (MailException $error) {
