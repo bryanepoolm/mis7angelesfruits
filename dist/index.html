@@ -232,10 +232,13 @@
               <div class="form-field"><label for="correo">Correo electrónico <span aria-hidden="true">*</span></label><input id="correo" name="email" type="email" autocomplete="email" required maxlength="160" placeholder="tu@empresa.com" /></div>
             </div>
             <div class="form-row">
+              <div class="form-field"><label for="telefono">Teléfono <span aria-hidden="true">*</span></label><input id="telefono" name="Teléfono" type="tel" autocomplete="tel" inputmode="tel" required minlength="10" maxlength="25" placeholder="Ej. +52 33 1234 5678" /></div>
               <div class="form-field"><label for="empresa">Empresa</label><input id="empresa" name="Empresa" type="text" autocomplete="organization" maxlength="120" placeholder="Nombre de tu empresa" /></div>
-              <div class="form-field"><label for="interes">Me interesa</label><select id="interes" name="Interés"><option value="Consulta general">Selecciona una opción</option><option value="Berries">Berries</option><option value="Aguacate">Aguacate</option><option value="Frutas y hortalizas">Frutas y hortalizas</option><option value="Colaboración">Colaboración</option></select></div>
             </div>
-            <div class="form-field"><label for="presentacion">Presentación</label><select id="presentacion" name="Presentación"><option value="Sin especificar">Selecciona una opción</option><option value="Fresca">Fresca</option><option value="Congelada">Congelada</option><option value="Fresca y congelada">Ambas</option></select></div>
+            <div class="form-row">
+              <div class="form-field"><label for="interes">Me interesa</label><select id="interes" name="Interés"><option value="Consulta general">Selecciona una opción</option><option value="Berries">Berries</option><option value="Aguacate">Aguacate</option><option value="Frutas y hortalizas">Frutas y hortalizas</option><option value="Colaboración">Colaboración</option></select></div>
+              <div class="form-field"><label for="presentacion">Presentación</label><select id="presentacion" name="Presentación"><option value="Sin especificar">Selecciona una opción</option><option value="Fresca">Fresca</option><option value="Congelada">Congelada</option><option value="Fresca y congelada">Ambas</option></select></div>
+            </div>
             <div class="form-field"><label for="mensaje">Mensaje <span aria-hidden="true">*</span></label><textarea id="mensaje" name="Mensaje" rows="5" required maxlength="3000" placeholder="Cuéntanos un poco sobre lo que necesitas"></textarea></div>
             <button class="button button-dark" type="submit">Enviar mensaje</button>
             <p class="form-feedback" role="status" aria-live="polite" hidden></p>

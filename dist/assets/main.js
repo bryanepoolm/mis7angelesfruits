@@ -110,6 +110,7 @@ contactForm.addEventListener('submit', async (event) => {
     const body = encodeURIComponent([
       `Nombre: ${fields.get('Nombre') || ''}`,
       `Correo: ${fields.get('email') || ''}`,
+      `Teléfono: ${fields.get('Teléfono') || ''}`,
       `Empresa: ${fields.get('Empresa') || ''}`,
       `Interés: ${fields.get('Interés') || ''}`,
       `Presentación: ${fields.get('Presentación') || ''}`,
