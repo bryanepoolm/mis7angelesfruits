@@ -104,7 +104,22 @@ contactForm.addEventListener('submit', async (event) => {
     contactForm.reset();
   } catch (error) {
     contactFeedback.className = 'form-feedback is-error';
-    contactFeedback.textContent = error.message || 'No se pudo enviar el mensaje. Inténtalo de nuevo.';
+    contactFeedback.replaceChildren();
+    const fields = new FormData(contactForm);
+    const subject = encodeURIComponent('Consulta desde mis7angelesfruits.mx');
+    const body = encodeURIComponent([
+      `Nombre: ${fields.get('Nombre') || ''}`,
+      `Correo: ${fields.get('email') || ''}`,
+      `Empresa: ${fields.get('Empresa') || ''}`,
+      `Interés: ${fields.get('Interés') || ''}`,
+      `Presentación: ${fields.get('Presentación') || ''}`,
+      '',
+      String(fields.get('Mensaje') || ''),
+    ].join('\n'));
+    const emailLink = document.createElement('a');
+    emailLink.href = `mailto:oscaradriangutierrezsantos@gmail.com?subject=${subject}&body=${body}`;
+    emailLink.textContent = 'Abrir mi correo con el mensaje preparado';
+    contactFeedback.append('No pudimos enviarlo desde aquí. ', emailLink);
     contactFeedback.hidden = false;
   } finally {
     contactSubmit.disabled = false;
